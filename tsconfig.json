@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "declaration": true,
+    "strictNullChecks": true,
+    "allowUnreachableCode": false,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strict": true,
+    "lib": ["es2017"],
+    "declarationMap": true,
+    "sourceMap": true,
+    "composite": true
+  },
+  "references": [
+    {
+      "path": "./api"
+    },
+    {
+      "path": "./web"
+    },
+    {
+      "path": "./api-interfaces"
+    },
+    {
+      "path": "./device"
+    }
+  ],
+  "include": [
+    "./api/src/**/*.d.ts",
+    "./web/src/**/*.d.ts",
+    "./api-interfaces/src/**/*.d.ts",
+    "./device/src/**/*.d.ts"
+  ]
+}
