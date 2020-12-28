@@ -25,15 +25,15 @@ const report: RequestHandler<
   const shutdown = state.shutdown;
   state.shutdown = false;
 
-  if (body.temperature) {
-    state.numberOfSuccussiveInvalidTemperatures = 0;
-  } else {
+  if (!body.temperature) {
     state.numberOfSuccussiveInvalidTemperatures =
       state.numberOfSuccussiveInvalidTemperatures + 1;
 
     if (state.numberOfSuccussiveInvalidTemperatures % 30 === 0) {
       await pushNotification.sendInvalidTemperatureNotification();
     }
+  } else {
+    state.numberOfSuccussiveInvalidTemperatures = 0;
   }
 
   const fanOn = shouldFanBeOn(state, body.temperature);
