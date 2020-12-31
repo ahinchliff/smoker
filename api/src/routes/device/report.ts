@@ -59,7 +59,11 @@ const shouldFanBeOn = (
     return true;
   }
 
-  if (temperature && temperature < state.autoTargetTemperature) {
+  if (
+    state.fanMode === "auto" &&
+    temperature &&
+    temperature < state.autoTargetTemperature
+  ) {
     return true;
   }
 
