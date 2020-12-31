@@ -53,6 +53,8 @@ const shouldFanBeOn = (
   state: api.StateService,
   temperature: number | undefined
 ): boolean => {
+  console.log("should fan be on", state, temperature);
+
   if (state.fanMode === "manual" && state.manualFanState === "on") {
     return true;
   }

@@ -64,6 +64,8 @@ const getTempFromSensor = async (): Promise<number | undefined> => {
         fanOn,
       });
 
+      console.log("report result", reportResult);
+
       if (reportResult.shutdown) {
         console.log("turning off");
         fanRelay.writeSync(0);
