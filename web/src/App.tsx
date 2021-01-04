@@ -386,10 +386,10 @@ const EditSettings: React.FC<{
               <Slider
                 defaultValue={200}
                 valueLabelDisplay="auto"
-                step={10}
+                step={1}
                 marks
-                min={100}
-                max={300}
+                min={0}
+                max={200}
                 onChange={handleAutoTargetTemperatureChange}
                 value={autoTargetTemperature}
               />
